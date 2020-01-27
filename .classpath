@@ -3,5 +3,6 @@
 	<classpathentry kind="src" path="src"/>
 	<classpathentry kind="con" path="org.eclipse.jdt.launching.JRE_CONTAINER"/>
 	<classpathentry kind="con" path="org.eclipse.pde.core.requiredPlugins"/>
+	<classpathentry kind="lib" path="plugins/org.eclipse.draw2d_3.10.100.201606061308.jar"/>
 	<classpathentry kind="output" path="bin"/>
 </classpath>

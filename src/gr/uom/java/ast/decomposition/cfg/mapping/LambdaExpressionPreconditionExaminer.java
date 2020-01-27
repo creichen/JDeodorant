@@ -110,6 +110,7 @@ public class LambdaExpressionPreconditionExaminer {
 		Set<IVariableBinding> variableBindings2 = expressionGap.getUsedVariableBindingsG2();
 		Set<VariableBindingPair> parameterTypeBindings = findParametersForLambdaExpression(variableBindings1, variableBindings2);
 		if(allVariableBindingsFound(variableBindings1, variableBindings2, parameterTypeBindings)) {
+//FIXME: track this ("L1")
 			boolean nonEffectivelyFinalLocalVariableIsDefinedAndUsedInMappedStatements = false;
 			for(VariableBindingPair pair : parameterTypeBindings) {
 				if(introduceParameter(pair) || variableIsDeclaredInNonMappedNodes(pair)) {
@@ -170,6 +171,8 @@ public class LambdaExpressionPreconditionExaminer {
 					IVariableBinding returnedVariable2 = variablesToBeReturnedG2.iterator().next();
 					VariableBindingPair pair = new VariableBindingPair(returnedVariable1, returnedVariable2);
 					blockGap.setReturnedVariableBinding(pair);
+				} else {
+//FIXME: track("6 or a variant thereof?")
 				}
 				if(!nonEffectivelyFinalLocalVariableIsDefinedAndUsedInBlockGap && blockGap.isRefactorable()) {
 					refactorableBlockGaps.add(blockGap);

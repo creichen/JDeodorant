@@ -2911,7 +2911,7 @@ public class PreconditionExaminer {
 		for(PlainVariable variable : nodesUpdatingTheSameVariable.keySet()) {
 			Set<PDGNode> nodes = nodesUpdatingTheSameVariable.get(variable);
 			if(nodes.size() > 1) {
-				nonMappedNodes.removeAll(nodes);
+				nonMappedNodes.removeAll(nodes); // TODO: CR: this seems to be the wrong way around...?
 				for(PDGNode node : nodes) {
 					CloneStructureNode cloneStructureNode1 = getCloneStructureRoot().findNodeG1(node);
 					if(cloneStructureNode1 != null && cloneStructureNode1.getMapping().getNodeG1().getASTStatement().equals(node.getASTStatement())) {

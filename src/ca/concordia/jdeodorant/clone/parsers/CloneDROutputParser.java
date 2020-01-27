@@ -85,6 +85,9 @@ public class CloneDROutputParser extends CloneDetectorOutputParser {
 
 		File f = new File(pathToFiles);
 		File[] files = f.listFiles();
+		if (files == null) {
+			throw new RuntimeException("No files with clone groups found at path: " + pathToFiles);
+		}
 
 		Set<Integer> toReturn = new TreeSet<Integer>(new Comparator<Integer>() {
 			public int compare(Integer o1, Integer o2) {
